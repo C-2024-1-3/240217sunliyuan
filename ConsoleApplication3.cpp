@@ -213,28 +213,32 @@ int main()
      //    }
 
 
-    double a, x1, x2;
+double a, x1, x2;
 
-    cin >> a;
+cin >> a;
 
+if (a >= 0) {
     x1 = a;
     x2 = (x1 + a / x1) / 2;
-
-
-
-    while (abs(x1 - x2) >= 0.00001) {
+    while (abs(x1 - x2) >= 0.0000000001) {
         x1 = x2;
         x2 = (x1 + a / x1) / 2;
 
     }
+    cout << fixed << setprecision(10) << x1 << endl;
+}
 
+if (a < 0) {
+    a = a * (-1);
+    x1 = a;
+    x2 = (x1 + a / x1) / 2;
+    while (abs(x1 - x2) >= 0.0000000001) {
+        x1 = x2;
+        x2 = (x1 + a / x1) / 2;
 
-
-    
-
-    cout << x1<< endl;
-
-
+    }
+    cout << fixed << setprecision(10) << x1 << "i" << endl;
+}
 
 
 
